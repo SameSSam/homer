@@ -1,0 +1,135 @@
+---
+# Homepage configuration
+# See https://github.com/homer-dashboard/homer/blob/main/docs/configuration.md for documentation.
+
+title: "Homer"
+subtitle: "Homepage"
+logo: "assets/logo.png"
+icon: "fas fa-skull-crossbones" # Optional icon to use as logo if logo is not set
+
+header: true # Set to false to hide the header
+footer: false # Set to false to hide the footer
+
+# Optional custom link to show in the footer
+# footerText: '<a href="https://github.com/homer-dashboard/homer">Homer</a>'
+
+# Optional navbar
+# links: # Will be shown in the header
+#   - name: "Contribute"
+#     icon: "fas fa-file-code"
+#     url: "https://github.com/homer-dashboard/homer"
+#     target: "_blank" # optional, opens link in a new tab.
+#   - name: "Wiki"
+#     icon: "fas fa-book"
+#     url: "https://www.wikipedia.org/"
+
+# Optional message
+# message:
+#   style: "is-dark" # See https://bulma.io/documentation/components/message/ for styling options.
+#   title: "Demo !"
+#   icon: "fa fa-grin"
+#   content: "This is a dummy homepage demo. <br/> Find more information on <a href='https://github.com/homer-dashboard/homer'>github</a>."
+
+# Optional settings
+columns: "auto" # "auto" or number of columns (e.g. "3")
+useCredentials: false # Set to true to send cookies and auth headers when fetching services. Default is false.
+
+# Set the default layout and color scheme
+defaults:
+  layout: cards # Either 'columns', 'list' or 'cards'
+  colorTheme: auto # One of 'auto', 'light', or 'dark'
+
+# Optional theme
+# theme: default # 'default' or one of the themes available in 'assets/themes/'.
+
+# Optional custom stylesheet
+# customCss: 'assets/custom.css' # relative path to a custom css file. This is loaded after the main css file. If the file does not exist, it will be ignored.
+
+# Optional settings for the background: default to no background.
+# background:
+#   image: "assets/background.jpg" # path to the background image, relative to the root of the app.
+#   blur: "" # 'sm', 'md', or 'lg' (medium is 'md')
+#   brightness: "75" # value between 0 and 100
+#   opacity: "50" # value between 0 and 100
+
+# Services
+# For each service, you can set the following properties:
+# - name: "Service name" (required)
+# - logo: "assets/tools/sample.png" (optional, path to the logo, relative to the root of the app)
+# - icon: "fas fa-cloud" (optional, icon to use if logo is not set)
+# - subtitle: "Service subtitle" (optional)
+# - tag: "app" (optional, tag to display in the service card)
+# - keywords: "self hosted" (optional, keywords to search for in the search bar)
+# - url: "https://example.com" (optional, link to the service)
+# - target: "_blank" (optional, opens link in a new tab)
+# - type: "Ping" (optional, type of service, e.g. 'Ping', 'Port', 'http', 'https', 'custom')
+# - method: "get" (optional, HTTP method to use for the service, e.g. 'get', 'post')
+# - endpoint: "https://example.com/health" (optional, endpoint to check for the service status)
+# - statusStyle: "dot" (optional, style of the status indicator, e.g. 'dot', 'border', 'pill')
+# - background: "red" (optional, background color of the service card)
+# - tagstyle: "is-success" (optional, style of the tag, e.g. 'is-success', 'is-warning', 'is-danger')
+# See https://github.com/homer-dashboard/homer/blob/main/docs/configuration.md for more details.
+services:
+  - name: "Awesome app"
+    logo: "assets/tools/sample.png"
+    subtitle: "Bookmark example"
+    tag: "app"
+    keywords: "self hosted reddit"
+    url: "https://www.reddit.com/r/selfhosted/"
+    target: "_blank" # optional, opens link in a new tab.
+  - name: "Another application"
+    logo: "assets/tools/sample2.png"
+    subtitle: "Another application"
+    tag: "app"
+    url: "#"
+  - name: "Second group of apps"
+    icon: "fas fa-code-branch"
+    items:
+      - name: "First app"
+        logo: "assets/tools/sample.png"
+        subtitle: "First app in second group"
+        tag: "app"
+        url: "#"
+      - name: "Second app"
+        logo: "assets/tools/sample.png"
+        subtitle: "Second app in second group"
+        tag: "app"
+        url: "#"
+      - name: "Service with status check"
+        logo: "assets/tools/sample2.png"
+        subtitle: "Shows service status"
+        tag: "app"
+        url: "#"
+        type: "Ping"
+        endpoint: "https://example.com"
+        statusStyle: "dot" # 'dot', 'border', or 'pill'
+  - name: "Dashboard icons"
+    icon: "fas fa-cloud"
+    items:
+      - name: "Dashboard app"
+        logo: "assets/tools/sample.png"
+        subtitle: "Dashboard app example"
+        tag: "app"
+        url: "#"
+      - name: "Another dashboard"
+        logo: "assets/tools/sample2.png"
+        subtitle: "Another dashboard example"
+        tag: "app"
+        url: "#"
+      - name: "Service with health check"
+        logo: "assets/tools/sample.png"
+        subtitle: "Shows health status"
+        tag: "app"
+        url: "#"
+        type: "Ping"
+        endpoint: "https://example.com"
+        statusStyle: "pill" # 'dot', 'border', or 'pill'
+      - name: "Service with status check and update interval"
+        logo: "assets/tools/sample.png"
+        subtitle: "Shows status with custom interval"
+        tag: "app"
+        url: "#"
+        type: "Ping"
+        endpoint: "https://example.com"
+        statusStyle: "dot"
+        updateIntervalMs: 5000 # Update interval in milliseconds
